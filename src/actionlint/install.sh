@@ -12,7 +12,7 @@ fi
 
 curl_installed=""
 
-if ! [ type curl >/dev/null 2>&1 ]; then
+if ! type curl >/dev/null 2>&1; then
   apt update --yes
   apt install --no-install-recommends --yes curl ca-certificates
 
