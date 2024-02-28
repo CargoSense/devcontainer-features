@@ -2,6 +2,7 @@
   "name": "actionlint",
   "id": "actionlint",
   "version": "1.0.0",
+  "description": "Install actionlint, a static checker for GitHub Actions workflow files.",
   "options": {
     "version": {
       "type": "string",

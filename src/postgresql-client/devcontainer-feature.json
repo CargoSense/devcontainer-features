@@ -1,0 +1,21 @@
+{
+  "name": "PostgreSQL Client",
+  "id": "postgresql-client",
+  "version": "1.0.0",
+  "description": "Install client and administrative programs for PostgreSQL.",
+  "options": {
+    "version": {
+      "type": "string",
+      "enum": [
+        "15",
+        "16",
+        "os-provided"
+      ],
+      "default": "os-provided",
+      "description": "Select or enter a PostgreSQL version."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
