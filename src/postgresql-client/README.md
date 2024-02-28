@@ -12,9 +12,9 @@ Install client and administrative programs for [PostgreSQL](https://www.postgres
 
 ## Options
 
-| Option ID     | Description                               | Type   | Default Value |
-|:--------------|:------------------------------------------|:-------|:--------------|
-| `version`     | The postgresql-client version to install. | string | `os-provided` |
+| Option ID | Description                               | Type   | Default Value |
+|:----------|:------------------------------------------|:-------|:--------------|
+| `version` | The postgresql-client version to install. | string | `os-provided` |
 
 ## OS Support
 
