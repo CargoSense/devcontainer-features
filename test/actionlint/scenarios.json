@@ -1,0 +1,19 @@
+{
+  "actionlint-version": {
+    "image": "debian:latest",
+    "features": {
+      "actionlint": {
+        "version": "1.2.3"
+      }
+    }
+  },
+
+  "actionlint-install-path": {
+    "image": "debian:latest",
+    "features": {
+      "actionlint": {
+        "installPath": "/usr/bin"
+      }
+    }
+  }
+}
