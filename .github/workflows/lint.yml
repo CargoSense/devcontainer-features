@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  shellchecker:
+  lint-shell-scripts:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -19,3 +19,11 @@ jobs:
       env:
         # Acceptable use of decimal comparison
         SHELLCHECK_OPTS: -e SC2072
+  validate-feature-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: devcontainers/action@v1
+        with:
+          base-path-to-features: "./src"
+          validate-only: "true"
