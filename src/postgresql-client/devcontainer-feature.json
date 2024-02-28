@@ -3,7 +3,6 @@
   "id": "postgresql-client",
   "version": "1.0.0",
   "description": "Install client and administrative programs for PostgreSQL.",
-  "documentationUrl": "https://github.com/CargoSense/devcontainer-features/tree/main/src/postgresql-client",
   "licenseUrl": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
   "options": {
     "version": {
