@@ -7,18 +7,21 @@ on:
 
 jobs:
   lint:
+    name: Lint
     uses: "./.github/workflows/lint.yml"
   test:
+    name: Test
     uses: "./.github/workflows/test.yml"
   publish-to-github-packages:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
+    name: Publish to GitHub Packages
     permissions:
       contents: read
       packages: write
     needs:
       - lint
       - test
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: devcontainers/action@v1
