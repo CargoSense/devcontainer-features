@@ -1,6 +1,6 @@
 # CargoSense/devcontainer-features
 
-🐳 📦 **Reusable features for [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces).**
+🐳 📦 **Reusable Features for [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces).**
 
 > [!TIP]
 > If you're new to Dev Containers, check out [the VisualStudio Code Dev Containers tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial).
