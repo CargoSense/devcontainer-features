@@ -1,6 +1,6 @@
 # actionlint
 
-Install [actionlint](https://github.com/rhysd/actionlint), a static checker for GitHub Actions workflow files.
+Install [actionlint](https://github.com/rhysd/actionlint), a static checker for [GitHub Actions](https://github.com/features/actions) workflow files.
 
 ## Usage
 
