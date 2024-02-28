@@ -1,8 +1,9 @@
 name: Publish
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   lint:
@@ -10,6 +11,7 @@ jobs:
   test:
     uses: "./.github/workflows/test.yml"
   publish-to-github-packages:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
