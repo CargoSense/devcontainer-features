@@ -1,0 +1,23 @@
+{
+  "name": "actionlint",
+  "id": "actionlint",
+  "version": "1.0.0",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest"
+      ],
+      "default": "latest",
+      "description": "Select or enter an actionlint version."
+    },
+    "installPath": {
+      "type": "string",
+      "default": "/usr/local/bin",
+      "description": "The path where actionlint will be installed."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
