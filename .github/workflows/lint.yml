@@ -1,0 +1,21 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  shellchecker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: azohra/shell-linter@latest
+      with:
+        path: "./src/**/*.sh"
+        severity: "warning"
+      env:
+        # Acceptable use of decimal comparison
+        SHELLCHECK_OPTS: -e SC2072
