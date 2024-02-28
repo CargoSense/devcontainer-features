@@ -27,6 +27,9 @@ The example below installs [actionlint](https://github.com/rhysd/actionlint) usi
 > [!TIP]
 > Features are located in this repository's [`./src` folder](https://github.com/CargoSense/devcontainer-features/tree/main/src). Each Feature's available options are detailed in their respective `README.md` files.
 
+> [!NOTE]
+> These Features are limited in scope and primarily target Debian/Ubuntu and compatible Linux distributions. They may not be suitable for every circumstance.
+
 ## License
 
 The code in this repository is freely available under the [MIT License](https://opensource.org/licenses/MIT).
