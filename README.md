@@ -9,16 +9,14 @@
 
 To reference a Feature from this repository, add the desired Features to a `devcontainer.json` file. Each Feature has a `README.md` that shows how to reference the Feature and which options are available for that Feature.
 
-The example below installs [actionlint](https://github.com/rhysd/actionlint) using the Feature from this repository.
+The example below installs [actionlint](https://github.com/rhysd/actionlint) and [ShellCheck](https://www.shellcheck.net) using the Features from this repository.
 
 ```json
 {
   "name": "my-project-devcontainer",
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
-    "ghcr.io/CargoSense/devcontainer-features/postgresql-client:1": {
-      "version": "16"
-    },
+    "ghcr.io/CargoSense/devcontainer-features/actionlint:1": {},
     "ghcr.io/CargoSense/devcontainer-features/shellcheck:1": {
       "version": "latest"
     },
