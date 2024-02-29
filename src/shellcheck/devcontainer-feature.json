@@ -3,8 +3,18 @@
     "id": "shellcheck",
     "version": "1.0.0",
     "description": "Install ShellCheck, a static analysis tool for shell scripts.",
+    "options": {
+      "version": {
+        "type": "string",
+        "proposals": [
+          "latest",
+          "os-provided"
+        ],
+        "default": "os-provided",
+        "description": "Select or enter a ShellCheck version."
+      }
+    },
     "installsAfter": [
       "ghcr.io/devcontainers/features/common-utils"
     ]
   }
-  
