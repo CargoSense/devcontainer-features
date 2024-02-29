@@ -11,13 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: azohra/shell-linter@latest
         with:
-          path: "./src/**/*.sh"
-          severity: "warning"
-        env:
-          # Acceptable use of decimal comparison
-          SHELLCHECK_OPTS: -e SC2072
+          fetch-depth: 0
+      - uses: redhat-plumbers-in-action/differential-shellcheck@v5
   validate:
     name: Validate devcontainer-feature.json files
     runs-on: ubuntu-latest
