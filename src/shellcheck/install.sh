@@ -22,7 +22,7 @@ curl_installed=""
 
 if ! type curl >/dev/null 2>&1; then
   apt update --yes
-  apt install --no-install-recommends --yes curl ca-certificates
+  apt install --no-install-recommends --yes curl ca-certificates xz-utils
 
   curl_installed="true"
 fi
@@ -43,10 +43,11 @@ case "${machine}" in
 esac
 
 # https://github.com/koalaman/shellcheck/releases/download/v0.9.0/shellcheck-v0.9.0.linux.aarch64.tar.xz
-url="https://github.com/koalaman/shellcheck/releases/download/v${SHELLCHECK_VERSION}/shellcheck-v${SHELLCHECK_VERSION}.linux.${arch}.tar.xz"
+file="shellcheck-v${SHELLCHECK_VERSION}.linux.${arch}.tar.xz"
+url="https://github.com/koalaman/shellcheck/releases/download/v${SHELLCHECK_VERSION}/${file}"
 
 curl -sSL "${url}" | tar --strip-components=1 -Jxvf - -C "${INSTALL_PATH}" "shellcheck-v${SHELLCHECK_VERSION}/shellcheck"
 
 if [ -n "${curl_installed}" ]; then
-  apt purge curl --autoremove --yes
+  apt purge curl xz-utils --autoremove --yes
 fi
