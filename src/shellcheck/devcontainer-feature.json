@@ -1,0 +1,25 @@
+{
+    "name": "ShellCheck",
+    "id": "shellcheck",
+    "version": "1.0.0",
+    "description": "Install ShellCheck, a static analysis tool for shell scripts.",
+    "options": {
+      "version": {
+        "type": "string",
+        "proposals": [
+          "latest",
+          "os-provided"
+        ],
+        "default": "os-provided",
+        "description": "Select or enter a ShellCheck version."
+      },
+      "installPath": {
+        "type": "string",
+        "default": "/usr/local/bin",
+        "description": "The path where ShellCheck will be installed."
+      }
+    },
+    "installsAfter": [
+      "ghcr.io/devcontainers/features/common-utils"
+    ]
+  }

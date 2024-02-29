@@ -1,0 +1,19 @@
+{
+  "shellcheck-version": {
+    "image": "debian:latest",
+    "features": {
+      "shellcheck": {
+        "version": "0.8.0"
+      }
+    }
+  },
+
+  "shellcheck-install-path": {
+    "image": "debian:latest",
+    "features": {
+      "shellcheck": {
+        "installPath": "/usr/bin"
+      }
+    }
+  }
+}
