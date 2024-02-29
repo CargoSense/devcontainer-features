@@ -16,10 +16,12 @@ The example below installs [actionlint](https://github.com/rhysd/actionlint) usi
   "name": "my-project-devcontainer",
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
-    "ghcr.io/CargoSense/devcontainer-features/actionlint:1": {},
     "ghcr.io/CargoSense/devcontainer-features/postgresql-client:1": {
       "version": "16"
-    }
+    },
+    "ghcr.io/CargoSense/devcontainer-features/shellcheck:1": {
+      "version": "latest"
+    },
   }
 }
 ```
