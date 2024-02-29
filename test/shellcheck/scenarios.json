@@ -1,15 +1,15 @@
 {
   "shellcheck-version": {
-    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "image": "debian:latest",
     "features": {
       "shellcheck": {
-        "version": "0.7.0"
+        "version": "0.8.0"
       }
     }
   },
 
   "shellcheck-install-path": {
-    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "image": "debian:latest",
     "features": {
       "shellcheck": {
         "installPath": "/usr/bin"

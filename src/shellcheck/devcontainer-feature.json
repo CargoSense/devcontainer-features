@@ -12,6 +12,11 @@
         ],
         "default": "os-provided",
         "description": "Select or enter a ShellCheck version."
+      },
+      "installPath": {
+        "type": "string",
+        "default": "/usr/local/bin",
+        "description": "The path where ShellCheck will be installed."
       }
     },
     "installsAfter": [
