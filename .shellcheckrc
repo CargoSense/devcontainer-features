@@ -3,3 +3,7 @@ enable=all
 
 # Follow source statements even when the file is not specified as input
 external-sources=true
+
+# Disable check-extra-masked-returns
+# https://www.shellcheck.net/wiki/SC2312
+disable=SC2312
