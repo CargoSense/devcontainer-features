@@ -21,7 +21,7 @@ fi
 check_packages curl ca-certificates
 
 if [[ "${ACTIONLINT_VERSION}" = "latest" ]]; then
-  ACTIONLINT_VERSION=$(latest_release_version "${ACTIONLINT_REPOSITORY}")
+  ACTIONLINT_VERSION=$(set -e; latest_release_version "${ACTIONLINT_REPOSITORY}")
 fi
 
 machine="$(uname -m)"
