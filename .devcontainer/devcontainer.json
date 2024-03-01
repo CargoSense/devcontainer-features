@@ -18,6 +18,7 @@
     }
   },
   "features": {
+    "ghcr.io/CargoSense/devcontainer-features/actionlint:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/CargoSense/devcontainer-features/shellcheck:1": {
       "version": "latest"
