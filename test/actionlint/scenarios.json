@@ -1,17 +1,37 @@
 {
-  "actionlint-version": {
-    "image": "debian:latest",
+  "install-bookworm": {
+    "image": "debian:bookworm",
     "features": {
       "actionlint": {
-        "version": "1.6.20"
+        "version": "latest"
       }
     }
   },
 
-  "actionlint-install-path": {
-    "image": "debian:latest",
+  "install-bookworm-with-settings": {
+    "image": "debian:bookworm",
     "features": {
       "actionlint": {
+        "version": "1.6.20",
+        "installPath": "/usr/bin"
+      }
+    }
+  },
+
+  "install-jammy": {
+    "image": "jammy:jammy",
+    "features": {
+      "actionlint": {
+        "version": "latest"
+      }
+    }
+  },
+
+  "install-jammy-with-settings": {
+    "image": "jammy:jammy",
+    "features": {
+      "actionlint": {
+        "version": "1.6.20",
         "installPath": "/usr/bin"
       }
     }
