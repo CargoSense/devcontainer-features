@@ -1,17 +1,35 @@
 {
-  "shellcheck-version": {
-    "image": "debian:latest",
+  "install-bookworm": {
+    "image": "debian:bookworm",
+    "features": {
+      "shellcheck": {}
+    }
+  },
+
+  "install-bookworm-with-options": {
+    "image": "debian:bookworm",
     "features": {
       "shellcheck": {
-        "version": "0.8.0"
+        "version": "0.8.0",
+        "installPath": "/usr/bin"
       }
     }
   },
 
-  "shellcheck-install-path": {
-    "image": "debian:latest",
+  "install-jammy": {
+    "image": "ubuntu:jammy",
     "features": {
       "shellcheck": {
+        "version": "latest"
+      }
+    }
+  },
+
+  "install-jammy-with-options": {
+    "image": "ubuntu:jammy",
+    "features": {
+      "shellcheck": {
+        "version": "0.8.0",
         "installPath": "/usr/bin"
       }
     }
