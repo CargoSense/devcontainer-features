@@ -19,7 +19,7 @@
   },
 
   "install-jammy": {
-    "image": "jammy:jammy",
+    "image": "ubuntu:jammy",
     "features": {
       "actionlint": {
         "version": "latest"
@@ -28,7 +28,7 @@
   },
 
   "install-jammy-with-settings": {
-    "image": "jammy:jammy",
+    "image": "ubuntu:jammy",
     "features": {
       "actionlint": {
         "version": "1.6.20",
