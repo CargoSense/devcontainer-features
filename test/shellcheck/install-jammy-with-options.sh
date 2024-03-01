@@ -7,7 +7,7 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" shellcheck --version
+check "version" bash -c "shellcheck --version | grep 0.8.0"
 check "which shellcheck" bash -c "which shellcheck | grep /usr/bin/shellcheck"
 
 # Report result
