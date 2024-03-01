@@ -19,6 +19,6 @@ Install [actionlint](https://github.com/rhysd/actionlint), a static checker for 
 
 ## OS Support
 
-This Feature should work on recent versions of Debian/Ubuntu and Linux distributions using the [apt](https://wiki.debian.org/AptCLI) management tool.
+This Feature should work on recent versions of Debian/Ubuntu, RedHat Enterprise Linux, Fedora, Alma, and RockyLinux distributions with the `apt`, `yum`, `dnf`, or `microdnf` package manager installed.
 
 `bash` is required to execute the `install.sh` script.

@@ -1,27 +1,54 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 
 ACTIONLINT_VERSION="${VERSION:-"latest"}"
-INSTALL_PATH="${INSTALLPATH:-"/usr/local/bin"}"
+ACTIONLINT_INSTALL_PATH="${INSTALLPATH:-"/usr/local/bin"}"
+ACTIONLINT_REPOSITORY="https://github.com/rhysd/actionlint"
 
-if [ "$(id -u)" -ne 0 ]; then
-  printf 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
-  exit 1
+DIRNAME=$(dirname -- "${0}")
+SCRIPT_DIR=$(cd -- "${DIRNAME}" > /dev/null 2>&1 && pwd)
+
+# shellcheck source=./src/actionlint/shared.lib.sh
+. "${SCRIPT_DIR}"/shared.lib.sh
+
+if type actionlint > /dev/null 2>&1; then
+  echo "Detected existing system install: $(actionlint --version)"
+  clean_up
+  exit 0
 fi
 
-curl_installed=""
+check_packages curl ca-certificates
 
-if ! type curl >/dev/null 2>&1; then
-  apt update --yes
-  apt install --no-install-recommends --yes curl ca-certificates
-
-  curl_installed="true"
+if [[ "${ACTIONLINT_VERSION}" = "latest" ]]; then
+  ACTIONLINT_VERSION=$(set -e; latest_release_version "${ACTIONLINT_REPOSITORY}")
 fi
 
-curl -sSL https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash | \
-  /bin/bash -s -- "${ACTIONLINT_VERSION}" "${INSTALL_PATH}"
+machine="$(uname -m)"
+case "${machine}" in
+  x86_64)
+    arch="amd64"
+    ;;
+  i?86)
+    arch="386"
+    ;;
+  aarch64|arm64)
+    arch="arm64"
+    ;;
+  arm*)
+    arch="armv6"
+    ;;
+  *)
+    echo "Could not determine arch from machine hardware name '${machine}'" >&2
+    exit 1
+    ;;
+esac
 
-if ! [ -z $curl_installed ]; then
-  apt purge curl --autoremove --yes
-fi
+# https://github.com/rhysd/actionlint/releases/download/v1.0.0/actionlint_1.0.0_linux_386.tar.gz
+url="${ACTIONLINT_REPOSITORY}/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_${arch}.tar.gz"
+
+echo "Downloading ${url} with curl..."
+
+curl -L "${url}" | tar xvz -C "${ACTIONLINT_INSTALL_PATH}" actionlint
+
+echo "Done!"

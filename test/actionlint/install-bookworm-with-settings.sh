@@ -7,8 +7,8 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" actionlint --version
-check "which actionlint" bash -c "which actionlint | grep /usr/local/bin/actionlint"
+check "version" bash -c "actionlint --version | grep 1.6.20"
+check "which actionlint" bash -c "which actionlint | grep /usr/bin/actionlint"
 
 # Report result
 reportResults
