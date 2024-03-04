@@ -2,6 +2,9 @@
 
 🐳 📦 **Reusable Features for [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces).**
 
+[![Build](https://img.shields.io/github/actions/workflow/status/CargoSense/devcontainer-features/lint.yml?branch=main&label=Lint&logo=github&style=for-the-badge)](https://github.com/CargoSense/devcontainer-features/actions/workflows/lint.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/CargoSense/devcontainer-features/test.yml?branch=main&label=Test&logo=github&style=for-the-badge)](https://github.com/CargoSense/devcontainer-features/actions/workflows/test.yml)
+
 > [!TIP]
 > If you're new to Dev Containers, check out [the VisualStudio Code Dev Containers tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial).
 
