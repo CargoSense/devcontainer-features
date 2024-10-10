@@ -34,7 +34,7 @@ apt-get update --yes
 if [ "${GOOGLE_CLOUD_CLI_VERSION}" = "latest" ]; then
   apt-get install --no-install-recommends --yes postgresql-client
 else
-  apt-get install --no-install-recommends --yes google-cloud-cli=${GOOGLE_CLOUD_CLI_VERSION}
+  apt-get install --no-install-recommends --yes google-cloud-cli="${GOOGLE_CLOUD_CLI_VERSION}"
 fi
 
 if  [ -n "${curl_installed}" ]; then
