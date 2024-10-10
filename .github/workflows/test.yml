@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm install -g @devcontainers/cli
-      - run: devcontainer features test -f ${{ matrix.features }} -i ${{ matrix.baseImage }}  --skip-scenarios .
+      - run: devcontainer features test -f ${{ matrix.features }} -i ${{ matrix.baseImage }} --skip-scenarios .
   test-scenarios:
     name: Feature ${{ matrix.features }}
     runs-on: ubuntu-latest
