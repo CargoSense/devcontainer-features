@@ -1,0 +1,19 @@
+{
+  "install-bookworm": {
+    "image": "debian:bookworm",
+    "features": {
+      "google-cloud-cli": {
+        "version": "latest"
+      }
+    }
+  },
+
+  "install-bookworm-with-settings": {
+    "image": "debian:bookworm",
+    "features": {
+      "google-cloud-cli": {
+        "version": "371.0.0-0"
+      }
+    }
+  }
+}
