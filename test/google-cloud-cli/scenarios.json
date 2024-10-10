@@ -12,7 +12,7 @@
     "image": "debian:bookworm",
     "features": {
       "google-cloud-cli": {
-        "version": "371.0.0-0"
+        "version": "475.0.0-0"
       }
     }
   }
