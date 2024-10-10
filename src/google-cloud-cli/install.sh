@@ -32,7 +32,7 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 apt-get update --yes
 
 if [ "${GOOGLE_CLOUD_CLI_VERSION}" = "latest" ]; then
-  apt-get install --no-install-recommends --yes postgresql-client
+  apt-get install --no-install-recommends --yes google-cloud-cli
 else
   apt-get install --no-install-recommends --yes google-cloud-cli="${GOOGLE_CLOUD_CLI_VERSION}"
 fi
