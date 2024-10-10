@@ -32,10 +32,10 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 apt-get update --yes
 
 if [ "${GOOGLE_CLOUD_CLI_VERSION}" = "latest" ]; then
-  apt-get install --no-install-recommends --yes google-cloud-cli
-else
-  apt-get install --no-install-recommends --yes google-cloud-cli="${GOOGLE_CLOUD_CLI_VERSION}"
+  GOOGLE_CLOUD_CLI_VERSION="$(apt show google-cloud-cli 2>/dev/null | sed -nr 's/version: (.+)/\1/ip' | tr -d '\r')"
 fi
+
+  apt-get install --no-install-recommends --yes google-cloud-cli="${GOOGLE_CLOUD_CLI_VERSION}"
 
 if  [ -n "${curl_installed}" ]; then
   apt purge curl --autoremove --yes
