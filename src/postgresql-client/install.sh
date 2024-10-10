@@ -41,10 +41,10 @@ sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org
 apt update --yes
 apt install --no-install-recommends --yes postgresql-client-${POSTGRESQL_VERSION}
 
-if ! [ -z $curl_installed ]; then
+if [ -n "${curl_installed}" ]; then
   apt purge curl --autoremove --yes
 fi
 
-if ! [ -z $gpg_installed ]; then
+if [ -n "${gpg_installed}" ]; then
   apt purge gpg --autoremove --yes
 fi
