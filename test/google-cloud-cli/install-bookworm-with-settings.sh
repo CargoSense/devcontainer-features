@@ -7,7 +7,7 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" bash -c "gcloud --version | grep 371.0.0-0"
+check "version" bash -c "gcloud --version | grep 371.0.0"
 check "which gcloud" bash -c "which gcloud | grep /usr/bin/gcloud"
 
 # Report result
