@@ -12,7 +12,7 @@ fi
 
 if [ "${POSTGRESQL_VERSION}" = "os-provided" ]; then
   apt update --yes
-  apt install --no-install-recommends --yes postgresql-client
+  apt install --no-install-recommends --yes libpq-dev postgresql-client
 
   exit 0
 fi
@@ -39,7 +39,7 @@ curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://
 sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt '${VERSION_CODENAME}'-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 apt update --yes
-apt install --no-install-recommends --yes postgresql-client-${POSTGRESQL_VERSION}
+apt install --no-install-recommends --yes libpq-dev postgresql-client-${POSTGRESQL_VERSION}
 
 if [ -n "${curl_installed}" ]; then
   apt purge curl --autoremove --yes
