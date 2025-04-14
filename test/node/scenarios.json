@@ -1,0 +1,10 @@
+{
+  "node-20": {
+    "image": "debian:latest",
+    "features": {
+      "node": {
+        "version": "20"
+      }
+    }
+  }
+}
