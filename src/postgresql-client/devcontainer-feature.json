@@ -1,7 +1,7 @@
 {
   "name": "PostgreSQL Client",
   "id": "postgresql-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Install client and administrative programs for PostgreSQL.",
   "options": {
     "version": {
