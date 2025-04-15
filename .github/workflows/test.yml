@@ -18,8 +18,7 @@ jobs:
           - postgresql-client
           - shellcheck
         baseImage:
-          - debian:latest
-          - ubuntu:latest
+          - mcr.microsoft.com/devcontainers/base:debian
           - mcr.microsoft.com/devcontainers/base:ubuntu
     continue-on-error: true
     steps:
