@@ -1,7 +1,7 @@
 {
   "name": "Node.js",
   "id": "node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Install Node.js from Nodesource's DEB repository.",
   "options": {
     "version": {
@@ -17,7 +17,23 @@
       "description": "Select or enter a Node.js version."
     }
   },
+  "containerEnv": {
+    "NPM_CONFIG_CACHE": "/usr/local/npm"
+  },
   "installsAfter": [
     "ghcr.io/devcontainers/features/common-utils"
-  ]
+  ],
+  "mounts": [
+    {
+      "source": "npm-cache",
+      "target": "/usr/local/npm",
+      "type": "volume"
+    },
+    {
+      "source": "node_modules-cache",
+      "target": "${containerWorkspaceFolder}/node_modules",
+      "type": "volume"
+    }
+  ],
+  "postCreateCommand": "sudo chown -R ${USER}:${USER} /usr/local/npm ${containerWorkspaceFolder}/node_modules"
 }
