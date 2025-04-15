@@ -1,6 +1,6 @@
 {
   "node-20": {
-    "image": "debian:latest",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "node": {
         "version": "20"
