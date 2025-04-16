@@ -1,0 +1,20 @@
+{
+  "name": "Stylelint",
+  "id": "stylelint",
+  "version": "1.0.0",
+  "description": "Install and configure Stylelint's official Visual Studio Code extension.",
+  "customizations": {
+    "vscode": {
+      "extensions": ["stylelint.vscode-stylelint"],
+      "settings": {
+        "css.validate": false,
+        "less.validate": false,
+        "scss.validate": false,
+        "stylelint.validate": ["css", "postcss", "scss"]
+      }
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
