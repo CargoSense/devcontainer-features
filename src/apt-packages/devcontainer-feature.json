@@ -1,0 +1,17 @@
+{
+  "name": "APT Packages",
+  "id": "apt-packages",
+  "version": "1.0.0",
+  "description": "Install programs using the APT package manager.",
+  "options": {
+    "packages": {
+      "type": "string",
+      "description": "A space-separated list of packages to install.",
+      "proposals": ["build-essential", "curl ca-certificates", "htop"],
+      "default": ""
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
