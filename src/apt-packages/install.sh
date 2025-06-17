@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 
-apt update
+read -ar packages <<< "${PACKAGES:-""}"
 
-# shellcheck disable=SC2154
-apt install --no-install-recommends --yes "${PACKAGES}"
+apt update
+apt install --no-install-recommends --yes "${packages[@]}"
 
 rm -rf /var/lib/apt/lists /var/cache/apt/archives
