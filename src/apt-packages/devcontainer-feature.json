@@ -1,7 +1,7 @@
 {
   "name": "APT Packages",
   "id": "apt-packages",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Install programs using the APT package manager.",
   "options": {
     "packages": {
