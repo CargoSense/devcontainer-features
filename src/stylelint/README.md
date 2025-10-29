@@ -6,7 +6,7 @@ Install and configure [Stylelint](https://stylelint.io)'s [official Visual Studi
 
 ```json
 "features": {
-  "ghcr.io/CargoSense/devcontainer-features/stylelint:1": {}
+  "ghcr.io/CargoSense/devcontainer-features/stylelint:2": {}
 }
 ```
 

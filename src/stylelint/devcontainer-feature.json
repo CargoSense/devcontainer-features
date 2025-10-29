@@ -1,15 +1,12 @@
 {
   "name": "Stylelint",
   "id": "stylelint",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Install and configure Stylelint's official Visual Studio Code extension.",
   "customizations": {
     "vscode": {
       "extensions": ["stylelint.vscode-stylelint"],
       "settings": {
-        "editor.codeActionsOnSave": {
-          "source.fixAll.stylelint": "explicit"
-        },
         "css.validate": false,
         "less.validate": false,
         "scss.validate": false,
