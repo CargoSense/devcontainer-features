@@ -14,7 +14,7 @@ Install [Node.js](https://nodejs.org) from [Nodesource's DEB repository](https:/
 
 | Option ID | Description                     | Type   | Default Value |
 |:----------|:--------------------------------|:-------|:--------------|
-| `version` | The Node.js version to install. | string | `22` |
+| `version` | The Node.js version to install. | string | `24`          |
 
 ## OS Support
 

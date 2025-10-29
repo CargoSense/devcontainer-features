@@ -1,19 +1,20 @@
 {
   "name": "Node.js",
   "id": "node",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Install Node.js from Nodesource's DEB repository.",
   "options": {
     "version": {
       "type": "string",
       "enum": [
-        "18",
         "20",
         "21",
         "22",
-        "23"
+        "23",
+        "24",
+        "25"
       ],
-      "default": "22",
+      "default": "24",
       "description": "Select or enter a Node.js version."
     }
   },

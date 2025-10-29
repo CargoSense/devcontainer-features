@@ -2,7 +2,7 @@
 
 set -e
 
-NODE_VERSION="${VERSION:-"22"}"
+NODE_VERSION="${VERSION:-"24"}"
 
 curl_installed=""
 
