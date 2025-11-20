@@ -6,7 +6,7 @@ Install [Node.js](https://nodejs.org) from [Nodesource's DEB repository](https:/
 
 ```json
 "features": {
-  "ghcr.io/CargoSense/devcontainer-features/node:1": {}
+  "ghcr.io/CargoSense/devcontainer-features/node:2": {}
 }
 ```
 
