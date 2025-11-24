@@ -10,7 +10,7 @@ jobs:
     name: Lint shell scripts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - uses: redhat-plumbers-in-action/differential-shellcheck@v5
@@ -18,7 +18,7 @@ jobs:
     name: Validate devcontainer-feature.json files
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: devcontainers/action@v1
         with:
           base-path-to-features: "./src"
