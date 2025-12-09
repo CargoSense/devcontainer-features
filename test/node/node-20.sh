@@ -7,7 +7,7 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" bash -c "node --version | grep -E 'v20\..+'"
+check "version" bash -c "node --version | grep v20.1.0"
 
 # Report result
 reportResults

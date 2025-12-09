@@ -6,7 +6,7 @@ Install [Node.js](https://nodejs.org) from [Nodesource's DEB repository](https:/
 
 ```json
 "features": {
-  "ghcr.io/CargoSense/devcontainer-features/node:2": {}
+  "ghcr.io/CargoSense/devcontainer-features/node:3": {}
 }
 ```
 
@@ -14,7 +14,7 @@ Install [Node.js](https://nodejs.org) from [Nodesource's DEB repository](https:/
 
 | Option ID | Description                     | Type   | Default Value |
 |:----------|:--------------------------------|:-------|:--------------|
-| `version` | The Node.js version to install. | string | `24`          |
+| `version` | The Node.js version to install. | string | `automatic`   |
 
 ## OS Support
 

@@ -3,7 +3,7 @@
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "node": {
-        "version": "20"
+        "version": "20.1.0"
       }
     }
   }
