@@ -36,10 +36,10 @@ fi
 
 install -d /usr/share/postgresql-common/pgdg
 curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt '${VERSION_CODENAME}'-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 
 apt update --yes
-apt install --no-install-recommends --yes libpq-dev postgresql-client-${POSTGRESQL_VERSION}
+apt install --no-install-recommends --yes libpq-dev postgresql-client-"${POSTGRESQL_VERSION}"
 
 if [ -n "${curl_installed}" ]; then
   apt purge curl --autoremove --yes
