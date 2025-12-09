@@ -1,7 +1,7 @@
 {
   "name": "Bundler",
   "id": "bundler",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Configure a mounted volume for Bundler.",
   "containerEnv": {
     "BUNDLE_PATH": "/usr/local/bundle"
@@ -16,5 +16,5 @@
       "type": "volume"
     }
   ],
-  "postCreateCommand": "sudo chown -R ${USER}:${USER} /usr/local/bundle"
+  "onCreateCommand": "sudo chown -R ${USER}:${USER} /usr/local/bundle"
 }

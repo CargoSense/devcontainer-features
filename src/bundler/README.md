@@ -6,7 +6,7 @@ Configure a mounted volume for [Bundler](https://bundler.io).
 
 ```json
 "features": {
-  "ghcr.io/CargoSense/devcontainer-features/bundler:1": {}
+  "ghcr.io/CargoSense/devcontainer-features/bundler:2": {}
 }
 ```
 
