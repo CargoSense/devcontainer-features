@@ -3,6 +3,8 @@
   "id": "stylelint",
   "version": "2.0.1",
   "description": "Install and configure Stylelint's official Visual Studio Code extension.",
+  "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/stylelint",
+  "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
   "customizations": {
     "vscode": {
       "extensions": ["stylelint.vscode-stylelint"],

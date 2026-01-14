@@ -3,6 +3,8 @@
   "id": "actionlint",
   "version": "1.1.0",
   "description": "Install actionlint, a static checker for GitHub Actions workflow files.",
+  "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/actionlint",
+  "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
   "options": {
     "version": {
       "type": "string",

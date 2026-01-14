@@ -2,7 +2,9 @@
   "name": "APT Packages",
   "id": "apt-packages",
   "version": "1.0.3",
-  "description": "Install programs using the APT package manager.",
+  "description": "Install programs using the apt package manager.",
+  "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/apt-packages",
+  "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
   "options": {
     "packages": {
       "type": "string",

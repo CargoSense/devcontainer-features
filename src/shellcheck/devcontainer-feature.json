@@ -3,6 +3,8 @@
     "id": "shellcheck",
     "version": "1.1.0",
     "description": "Install ShellCheck, a static analysis tool for shell scripts.",
+    "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/shellcheck",
+    "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
     "options": {
       "version": {
         "type": "string",

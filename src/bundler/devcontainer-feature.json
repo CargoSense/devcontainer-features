@@ -2,7 +2,9 @@
   "name": "Bundler",
   "id": "bundler",
   "version": "2.0.0",
-  "description": "Configure a mounted volume for Bundler.",
+  "description": "Configure a mounted volume for caching Bundler-installed Ruby gems.",
+  "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/bundler",
+  "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
   "containerEnv": {
     "BUNDLE_PATH": "/usr/local/bundle"
   },

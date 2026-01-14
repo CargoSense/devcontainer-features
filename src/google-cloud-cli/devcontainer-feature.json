@@ -3,6 +3,8 @@
   "id": "google-cloud-cli",
   "version": "1.1.0",
   "description": "Install Google Cloud CLI, a tool for creating and managing Google Cloud resources and services.",
+  "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/google-cloud-cli",
+  "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
   "options": {
     "version": {
       "type": "string",

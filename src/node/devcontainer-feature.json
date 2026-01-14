@@ -3,6 +3,8 @@
   "id": "node",
   "version": "3.0.0",
   "description": "Install Node.js from Nodesource's DEB repository.",
+  "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/node",
+  "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
   "options": {
     "version": {
       "type": "string",
