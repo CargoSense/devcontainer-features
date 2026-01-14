@@ -8,10 +8,10 @@ on:
 jobs:
   lint:
     name: Lint
-    uses: "./.github/workflows/lint.yml"
+    uses: ./.github/workflows/lint.yml
   test:
     name: Test
-    uses: "./.github/workflows/test.yml"
+    uses: ./.github/workflows/test.yml
   publish-to-github-packages:
     name: Publish to GitHub Packages
     permissions:
@@ -26,8 +26,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: devcontainers/action@v1
         with:
-          base-path-to-features: "./src"
-          generate-docs: "false"
-          publish-features: "true"
+          base-path-to-features: ./src
+          publish-features: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
