@@ -1,0 +1,24 @@
+{
+  "features": {
+    "ghcr.io/CargoSense/devcontainer-features/shellcheck:1": {
+      "version": "1.1.0",
+      "resolved": "ghcr.io/cargosense/devcontainer-features/shellcheck@sha256:bd2efc29446b238a25771a5f80416d69e0f264d5c102c00f8b1de3da013c640d",
+      "integrity": "sha256:bd2efc29446b238a25771a5f80416d69e0f264d5c102c00f8b1de3da013c640d"
+    },
+    "ghcr.io/devcontainers-extra/features/devcontainers-cli:1": {
+      "version": "1.0.1",
+      "resolved": "ghcr.io/devcontainers-extra/features/devcontainers-cli@sha256:855f5c6a10d1d1353fc3127216171653527f2dadaa50bee3ef4c55a261e19749",
+      "integrity": "sha256:855f5c6a10d1d1353fc3127216171653527f2dadaa50bee3ef4c55a261e19749"
+    },
+    "ghcr.io/devcontainers-extra/features/shfmt:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/devcontainers-extra/features/shfmt@sha256:9d87bdd69e7b37554488291e79b37a40d1e18beddfa151454570d5bf72423df8",
+      "integrity": "sha256:9d87bdd69e7b37554488291e79b37a40d1e18beddfa151454570d5bf72423df8"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "2.16.0",
+      "resolved": "ghcr.io/devcontainers/features/docker-in-docker@sha256:31ef1bbfde793bcc62c52fa847c02a15fe659d69e48b2d8c1cfbd4db95f97cf7",
+      "integrity": "sha256:31ef1bbfde793bcc62c52fa847c02a15fe659d69e48b2d8c1cfbd4db95f97cf7"
+    }
+  }
+}
