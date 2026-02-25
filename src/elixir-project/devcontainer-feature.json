@@ -1,0 +1,57 @@
+{
+  "id": "elixir-project",
+  "version": "1.0.0",
+  "name": "elixir-project",
+  "description": "An opinionated, batteries-included Dev Container Feature for Elixir projects.",
+  "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/elixir-project",
+  "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
+  "containerEnv": {
+    "LESS": "-FMR",
+    "PAGER": "less"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ExpertLSP.expert"
+      ],
+      "settings": {
+        "[elixir]": {
+          "editor.formatOnSave": true
+        },
+        "editor.tabSize": 2,
+        "files": {
+          "insertFinalNewline": true,
+          "trimFinalNewlines": true,
+          "trimTrailingWhitespace": true
+        }
+      }
+    }
+  },
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false,
+      "username": "vscode",
+      "userUid": 1000,
+      "userGid": 1000
+    }
+  },
+  "mounts": [
+    {
+      "source": "build-cache-${devcontainerId}",
+      "target": "${containerWorkspaceFolder}/_build",
+      "type": "volume"
+    },
+    {
+      "source": "dependency-cache-${devcontainerId}",
+      "target": "${containerWorkspaceFolder}/deps",
+      "type": "volume"
+    },
+    {
+      "source": "expert-cache-${devcontainerId}",
+      "target": "${containerWorkspaceFolder}/.expert",
+      "type": "volume"
+    }
+  ],
+  "onCreateCommand": "CONTAINER_WORKSPACE_FOLDER=${containerWorkspaceFolder} /opt/cargosense/elixir-project/onCreateCommand.sh",
+  "postCreateCommand": "sudo /opt/cargosense/elixir-project/postCreateCommand.sh"
+}

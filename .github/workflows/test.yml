@@ -13,6 +13,7 @@ jobs:
       matrix:
         features:
           - actionlint
+          - elixir-project
           - google-cloud-cli
           - node
           - postgresql-client
