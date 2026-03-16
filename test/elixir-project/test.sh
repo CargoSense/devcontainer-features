@@ -7,7 +7,7 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "environment" bash -c "env | grep ERL_AFLAGS"
+check "environment" bash -c "env | grep ERL_AFLAGS && env | grep MIX_OS_DEPS_COMPILE_PARTITION_COUNT"
 check "gitignore" grep -xF .bash_history .gitignore
 
 # Report result
