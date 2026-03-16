@@ -1,6 +1,6 @@
 {
   "id": "elixir-project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "elixir-project",
   "description": "An opinionated, batteries-included Dev Container Feature for Elixir projects.",
   "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/elixir-project",
