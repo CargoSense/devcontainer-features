@@ -1,12 +1,12 @@
 # node
 
-Install [Node.js](https://nodejs.org) from [Nodesource's DEB repository](https://deb.nodesource.com).
+Install [Node.js](https://nodejs.org) from prebuilt binaries.
 
 ## Usage
 
 ```json
 "features": {
-  "ghcr.io/CargoSense/devcontainer-features/node:3": {}
+  "ghcr.io/CargoSense/devcontainer-features/node:4": {}
 }
 ```
 
@@ -14,8 +14,8 @@ Install [Node.js](https://nodejs.org) from [Nodesource's DEB repository](https:/
 
 | Option ID | Description                     | Type   | Default Value |
 |:----------|:--------------------------------|:-------|:--------------|
-| `version` | The Node.js version to install. | string | `automatic`   |
+| `version` | The Node.js version to install. | string | `latest`      |
 
 ## OS Support
 
-This Feature should work on recent versions of Debian/Ubuntu and Linux distributions using the [apt](https://wiki.debian.org/AptCLI) management tool.
+This Feature should work on recent versions of Debian/Ubuntu and Linux distributions using the [apt](https://wiki.debian.org/AptCLI) management tool and on architectures for which Node.js provides prebuilt binaries.

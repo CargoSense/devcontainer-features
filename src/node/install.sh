@@ -2,18 +2,31 @@
 
 set -e
 
-NODE_VERSION="${VERSION:-"automatic"}"
-NODE_MAJOR_VERSION="24"
+NODE_VERSION="${VERSION:-"latest"}"
 
-pkg="nodejs"
+USERNAME="${USERNAME:-"${_REMOTE_USER:-"automatic"}"}"
 
-if [[ "${NODE_VERSION}" != "automatic" ]]; then
-  NODE_MAJOR_VERSION="$(echo "${NODE_VERSION}" | cut -d. -f1)"
-  pkg="${pkg}=${NODE_VERSION}-1nodesource1"
+# Determine the appropriate non-root user.
+if [[ "${USERNAME}" = "automatic" ]]; then
+  USERNAME=""
+  POSSIBLE_USERS=("vscode" "node" "$(getent passwd 1000 | cut -d: -f1)")
+
+  for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
+    if id -u "${CURRENT_USER}" >/dev/null 2>&1; then
+      USERNAME="${CURRENT_USER}"
+      break
+    fi
+  done
+
+  if [[ "${USERNAME}" = "" ]]; then
+    USERNAME="root"
+  fi
+elif ! id -u "${USERNAME}" >/dev/null 2>&1; then
+  USERNAME="root"
 fi
 
 curl_installed=""
-gpg_installed=""
+xz_installed=""
 
 if ! type curl >/dev/null 2>&1; then
   apt update --yes
@@ -22,49 +35,56 @@ if ! type curl >/dev/null 2>&1; then
   curl_installed="true"
 fi
 
-if ! type gpg >/dev/null 2>&1; then
+if ! type xz >/dev/null 2>&1; then
   apt update --yes
-  apt install --yes gnupg
+  apt install --yes xz-utils
 
-  gpg_installed="true"
+  xz_installed="true"
 fi
 
-apt_sources_snippet="$(cat << EOF
-Types: deb
-URIs: https://deb.nodesource.com/node_${NODE_MAJOR_VERSION}.x
-Suites: nodistro
-Components: main
-Signed-By: /etc/apt/keyrings/nodesource.gpg
-EOF
-)"
+# Normalize architecture
+arch="$(dpkg --print-architecture)"
+if [[ "${arch}" = "amd64" ]] || [[ "${arch}" = "x86_64" ]] || [[ "${arch}" = "i386" ]]; then
+  arch="x64"
+fi
 
-install -dm 755 /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-echo "${apt_sources_snippet}" | tee /etc/apt/sources.list.d/nodesource.sources
+# Normalize Node.js version string
+if [[ "${NODE_VERSION}" != "latest" ]] && [[ "${NODE_VERSION}" != "v"* ]]; then
+  NODE_VERSION="v${NODE_VERSION}"
+fi
 
+# Configure "node" group
+if ! grep -e "^node:" /etc/group >/dev/null 2>&1; then
+  groupadd --system node
+fi
+usermod --append --groups node "${USERNAME}"
+
+# Install Node.js
+umask 0002
+mkdir -p "${NODE_HOME:?}"
+curl -fsSL "https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-linux-${arch}.tar.xz" | tar xf - -C "${NODE_HOME}" -J --strip-components 1
+
+chown -R "${USERNAME}:node" "${NODE_HOME}"
+chmod g+rws "${NODE_HOME}"
+
+# Configure shell
+rc_snippet="export NODE_VERSION=\"$(node -v | cut -c2-)\""
+
+if [[ -f /etc/bash.bashrc ]] && ! grep -q "${rc_snippet}" /etc/bash.bashrc; then
+  echo "${rc_snippet}" >>/etc/bash.bashrc
+fi
+
+if [[ -f /etc/zsh/zshrc ]] && ! grep -q "${rc_snippet}" /etc/zsh/zshrc; then
+  echo "${rc_snippet}" >>/etc/zsh/zshrc
+fi
+
+# Cleanup
 if [[ -n "${curl_installed}" ]]; then
   apt purge curl --autoremove --yes
   rm -rf /var/lib/apt/lists/*
 fi
 
-if [[ -n "${gpg_installed}" ]]; then
-  apt purge gnupg --autoremove --yes
+if [[ -n "${xz_installed}" ]]; then
+  apt purge xz-utils --autoremove --yes
   rm -rf /var/lib/apt/lists/*
-fi
-
-apt update --yes
-apt install --yes "${pkg}"
-rm -rf /var/lib/apt/lists/*
-
-node_rc_snippet="$(cat << EOF
-export NODE_VERSION="$(node -v | cut -c2-)"
-EOF
-)"
-
-if [[ "$(cat /etc/bash.bashrc)" != *"${node_rc_snippet}"* ]]; then
-  echo "${node_rc_snippet}" >> /etc/bash.bashrc
-fi
-
-if [[ -f "/etc/zsh/zshrc" ]] && [[ "$(cat /etc/zsh/zshrc)" != *"${node_rc_snippet}"* ]]; then
-  echo "${node_rc_snippet}" >> /etc/zsh/zshrc
 fi
