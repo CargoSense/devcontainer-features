@@ -7,8 +7,8 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "version" bash -c "node --version | grep -E 'v24\..+'"
-check "which node" bash -c "which node | grep /usr/bin/node"
+check "version" bash -c "node --version | grep -E 'v25\..+'"
+check "which node" bash -c "which node | grep /usr/local/share/node/bin/node"
 
 # Report result
 reportResults
