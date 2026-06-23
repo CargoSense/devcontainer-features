@@ -23,7 +23,7 @@ jobs:
           - mcr.microsoft.com/devcontainers/base:ubuntu
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - run: |
           npx @devcontainers/cli features test \
             --base-image ${{ matrix.baseImage }} \
@@ -43,7 +43,7 @@ jobs:
           - shellcheck
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - run: |
           npx @devcontainers/cli features test \
             --features ${{ matrix.features }} \
