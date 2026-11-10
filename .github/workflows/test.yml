@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - 1password-cli
           - actionlint
           - elixir-project
           - google-cloud-cli
