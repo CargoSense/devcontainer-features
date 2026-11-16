@@ -1,0 +1,12 @@
+{
+  "name": "1Password CLI",
+  "id": "1password-cli",
+  "version": "1.0.0",
+  "description": "Install the 1Password CLI (op) from 1Password's signed apt repository.",
+  "documentationURL": "https://github.com/CargoSense/devcontainer-features/tree/main/src/1password-cli",
+  "licenseURL": "https://github.com/CargoSense/devcontainer-features/blob/main/LICENSE",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/CargoSense/devcontainer-features/apt-packages"
+  ]
+}
